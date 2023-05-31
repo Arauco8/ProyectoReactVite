@@ -1,15 +1,23 @@
+/* eslint-disable no-unused-vars */
 import './App.css'
+import Home from './Pages/Home'
+import Navbar from './components/Navbar'
 import ClassComponent from './components/ClassComponent'
-import FuncComponent from './components/FuncComponent'
-import HelloWorld from './components/HelloWorld'
+import { useState } from 'react'
+import Cart from './Pages/Cart'
+import Form from './Pages/Form'
+
 
 function App() {
 
+  const [cart, setCart] = useState([])
+  
   return (
     <>
-      <ClassComponent/>
-      <HelloWorld name={"Puma"}/>
-      <FuncComponent text={'Función n° 1'} salario={150000} />
+      <Navbar/>
+      <Cart cart={cart}/>
+      <Home setCart={setCart} cart={cart}/>
+      <Form/>
     </>
   )
 }
